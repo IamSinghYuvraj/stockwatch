@@ -1,4 +1,4 @@
-"use client";
+"use client"; //to use browser features and let nextjs know it is a client side code
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -8,19 +8,22 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+//avatar: image container, AvatarImage:Profile img, avatarfallback:If image fails show text
 import { useRouter } from "next/navigation";
+//userouter: Used to move user from one page to another
 import { Button } from "./ui/button";
 import { LogOut } from "lucide-react";
 import NavItems from "./NavItems";
 
 const UserDropdown = () => {
-  const router = useRouter();
+  //a functional react component containing user avatar, name , dropdown menu
+  const router = useRouter(); // initializing useRouter function
 
   const handleSignOut = async () => {
     router.push("/sign-in");
-  };
+  }; //pushing the user to the sign in page via the handlesignout function
 
-  const user = { name: "John", email: "uvsingh@gmail.com" };
+  const user = { name: "John", email: "uvsingh@gmail.com" }; //dummy data
 
   return (
     <DropdownMenu>
